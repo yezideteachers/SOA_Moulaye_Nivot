@@ -2,14 +2,15 @@ package polytech.unice.fr.groupe_f;
 
 public class Product {
 
-	static int id=0;
-	
 	// Fields
-	int quantity;
-	TYPE type;
-	String name;
-	COLOR color;
-	double price;
+	private static int id=0;
+	
+	private int quantity;
+	private TYPE type;
+	private String name;
+	private COLOR color;
+	private double price;
+	private WOOD wood;
 	
 	// Constructor
 	public Product(int quantity, TYPE type, String name,
@@ -21,9 +22,14 @@ public class Product {
 		this.name = name;
 		this.color = color;
 		this.price = price;
+		this.wood = wood;
 	}
 	
 	// Getters & Setters
+	public int getId(){
+		return id;
+	}
+	
 	public int getQuantity() {
 		return quantity;
 	}
@@ -64,11 +70,19 @@ public class Product {
 		this.price = price;
 	}
 	
+	public WOOD getWood() {
+		return wood;
+	}
+	
+	public void setWood(WOOD wood) {
+		this.wood = wood;
+	}
+	
 	// toString
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", quantity=" + quantity
 				+ ", type=" + type + ", name=" + name + ", color=" + color
-				+ ", price=" + price + "]";
+				+ ", price=" + price + "wood=" + wood + "]";
 	}
 }
