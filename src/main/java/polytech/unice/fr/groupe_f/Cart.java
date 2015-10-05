@@ -20,9 +20,6 @@ public class Cart {
 		
 	}
 
-
-
-
 	public static void AddCommande(String nameClient,String nameProduct){
 		
 		ArrayList<String> al = new ArrayList<String>();
