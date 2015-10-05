@@ -10,6 +10,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.json.JSONArray;
+
 @Path("/clients")
 //Here we generate JSON data from scratch, one should use a framework instead
 @Produces(MediaType.APPLICATION_JSON)
@@ -18,7 +20,9 @@ public interface ClientService {
 	
 	
 	@POST
-	public Response registerNewClient(String name) ;
+	@Path("/create/{name},{adress},{mail}")
+	public Response registerNewClient(@PathParam("name") String name,@PathParam("adress") String adress,
+			@PathParam("mail") String mail);
 	
 	@GET
 	public Response getAvailableClients() ;
@@ -28,14 +32,18 @@ public interface ClientService {
 	public Response deleteClient(String name);
 	
 	@PUT
-	public Response updateClient(String name, String adress);
+	@Path("/update/{name},{adress},{mail}")
+	public Response updateClient(@PathParam("name") String name,@PathParam("adress") String adress,
+					@PathParam("mail") String mail);
 	
 	@GET
-	@Path("/name")
-	public Response getClient(@PathParam("/name") String name);
+	@Path("/search/{name}")
+	public Response getClient(@PathParam("name") String name);
 	
 	@GET
-	@Path("/name/filter")
-	public Response filterBy(@PathParam("/name/filter") String name,String v);
+	@Path("/search/filter/{name},{value}")
+	public Response filterBy(@PathParam("name") String name, @PathParam("value") String v);
+	
+	
 
 }

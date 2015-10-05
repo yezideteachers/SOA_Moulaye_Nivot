@@ -12,14 +12,14 @@ import polytech.unice.fr.groupe_f.TYPE;
 
 public class ProductImpl implements ProductService {
 
-	public Response createNewProduct(int id, int size, TYPE type,
+	public Response createNewProduct(int size, TYPE type,
 			String name, String color, double price) {
 		if(RegisterProducts.read(name).getName() != null) {
 			return Response.status(Response.Status.CONFLICT)
 					       .entity("\"Existing name " + name + "\"")
 					       .build();
 		}
-		RegisterProducts.create(id, name, type, color, price, size);
+		RegisterProducts.create(name, type, color, price, size);
 		return Response.ok().build();
 	}
 

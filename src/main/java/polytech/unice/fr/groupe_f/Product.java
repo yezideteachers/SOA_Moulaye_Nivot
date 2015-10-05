@@ -2,14 +2,15 @@ package polytech.unice.fr.groupe_f;
 
 public class Product {
 
-	int id,quatity,size;
+	static int id=0;
+	int quatity,size;
 	TYPE type;
 	String name,color;
 	double price;
-	public Product(int id, int quatity, int size, TYPE type, String name,
+	public Product(int quatity, int size, TYPE type, String name,
 			String color, double price) {
 		
-		this.id = id;
+		id++;
 		this.quatity = quatity;
 		this.size = size;
 		this.type = type;
@@ -17,12 +18,7 @@ public class Product {
 		this.color = color;
 		this.price = price;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public int getQuatity() {
 		return quatity;
 	}

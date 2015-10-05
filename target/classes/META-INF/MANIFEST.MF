@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1443970758201
+Bnd-LastModified: 1444041270337
 Build-Jdk: 1.8.0_60
 Built-By: yazide
 Bundle-Blueprint: OSGI-INF/blueprint/blueprint.xml

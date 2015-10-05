@@ -1,0 +1,17 @@
+polytech\unice\fr\groupe_f\TYPE.class
+polytech\unice\fr\groupe_f\Product.class
+polytech\unice\fr\groupe_f\Interface\RegisterClientsInterface.class
+polytech\unice\fr\groupe_f\Interface\RegisterProdInterface.class
+polytech\unice\fr\groupe_f\RegisterProducts.class
+polytech\unice\fr\groupe_f\Interface\ProductInterface.class
+polytech\unice\fr\groupe_f\service\CartImpl.class
+polytech\unice\fr\groupe_f\service\CartService.class
+polytech\unice\fr\groupe_f\service\ProductService.class
+polytech\unice\fr\groupe_f\Cart.class
+polytech\unice\fr\groupe_f\MainClass.class
+polytech\unice\fr\groupe_f\Delivry.class
+polytech\unice\fr\groupe_f\service\ClientImpl.class
+polytech\unice\fr\groupe_f\RegisterClients.class
+polytech\unice\fr\groupe_f\service\ClientService.class
+polytech\unice\fr\groupe_f\service\ProductImpl.class
+polytech\unice\fr\groupe_f\Client.class

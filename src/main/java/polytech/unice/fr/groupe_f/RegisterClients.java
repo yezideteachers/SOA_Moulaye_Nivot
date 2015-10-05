@@ -8,8 +8,8 @@ public class RegisterClients{
 	
 private static HashMap<String, Client> stor = new HashMap<String, Client>();
 
-public static void create(String name, String adress) {
-	stor.put(name, new Client(name, adress));
+public static void create(String name,String adress,String mail) {
+	stor.put(name, new Client(name, adress, mail, 0));
 	
 }
 
@@ -23,8 +23,10 @@ public static void delete(String name) {
 	
 }
 
-public static void update(String name,String adress) {
+public static void update(String name,String adress,String mail,int nbCommande) {
 	stor.get(name).setAdress(adress);
+	stor.get(name).setMail(mail);
+	stor.get(name).setNbCommande(nbCommande);
 	
 }
 
@@ -33,8 +35,9 @@ public static Collection<Client> getAvailableClients() {
 }
 
 static{
-	RegisterClients.create("user1", "20");
-	RegisterClients.create("user2", "02");
+	RegisterClients.create("user1", "01","mail1");
+	RegisterClients.create("user2", "02","mail2");
+	RegisterClients.create("user3", "03","mail3");
 }	
 	
 }

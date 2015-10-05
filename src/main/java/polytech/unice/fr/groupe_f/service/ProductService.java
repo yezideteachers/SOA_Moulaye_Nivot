@@ -23,8 +23,11 @@ public interface ProductService {
 	
 	
 	@POST
-	@Consumes(MediaType.TEXT_PLAIN)
-	public Response createNewProduct(int id, int size, TYPE type, String name,String color, double price);
+	@Path("/create/{size},{type},{name},{color},{price}")
+	
+	public Response createNewProduct(@PathParam("size")int size, @PathParam("type") TYPE type,
+			@PathParam("name") String name,@PathParam("color") String color, 
+			@PathParam("price") double price);
 	
 	@GET
 	public Response getAvailableProducts();
@@ -38,12 +41,12 @@ public interface ProductService {
 	
 	
 	@GET
-	@Path("/name")
-	public Response getProduct(@PathParam("/name") String name);
+	@Path("/search/{name}")
+	public Response getProduct(@PathParam("name") String name);
 	
 	@GET
-	@Path("/name/filter")
-	public Response filterBy(@PathParam("/name/filter") String name,String v);
+	@Path("/search/filter/{kind},{value}")
+	public Response filterBy(@PathParam("kind") String name, @PathParam("value") String v);
 		
 
 }

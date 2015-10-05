@@ -7,9 +7,9 @@ public class RegisterProducts {
 	
 	public static HashMap<String, Product> col = new HashMap<String, Product>();
 
-	public static void create(int id, String name, TYPE type, String color,
+	public static void create(String name, TYPE type, String color,
 			double price, int size) {
-		col.put(name, new Product(id, 1, size, type, name, color, price));
+		col.put(name, new Product(10, size, type, name, color, price));
 
 	}
 
@@ -24,10 +24,10 @@ public class RegisterProducts {
 	}
 
 
-	public static void update(String name, TYPE type, String color, int size) {
+	public static void update(String name, TYPE type, String color) {
 		col.get(name).setType(type);
 		col.get(name).setColor(color);
-		col.get(name).setSize(size);
+		
 		
 	}
 	
@@ -37,12 +37,12 @@ public class RegisterProducts {
 	
 	static
 	{
-		RegisterProducts.create(1, "chaise", TYPE.CHAISE, "blue", 24.99, 12);
-		RegisterProducts.create(1, "porte", TYPE.PORTE, "red", 84.99, 25);
-		RegisterProducts.create(1, "placard", TYPE.PLACARD, "black", 254.0, 82);
-		RegisterProducts.create(1, "chaise2", TYPE.CHAISE, "green", 54.99, 22);
-		RegisterProducts.create(1, "bureau", TYPE.BUREAU, "white", 854.99, 65);
-		RegisterProducts.create(1, "lit", TYPE.LIT, "yellow", 244.99, 72);
+		RegisterProducts.create("chaise", TYPE.CHAISE, "blue", 24.99, 12);
+		RegisterProducts.create("porte", TYPE.PORTE, "red", 84.99, 25);
+		RegisterProducts.create("placard", TYPE.PLACARD, "black", 254.0, 82);
+		RegisterProducts.create("chaise2", TYPE.CHAISE, "green", 54.99, 22);
+		RegisterProducts.create("bureau", TYPE.BUREAU, "white", 854.99, 65);
+		RegisterProducts.create("lit", TYPE.LIT, "yellow", 244.99, 72);
 	}
 
 }
