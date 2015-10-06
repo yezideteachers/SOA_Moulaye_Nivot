@@ -45,6 +45,29 @@
       <artifactId>json</artifactId>
       <version>20141113</version>
     </dependency>
+    <!-- Json jackson -->
+    <dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-jackson-provider</artifactId>
+		<version>3.0.4.Final</version>
+	</dependency>
+	<dependency>
+	<groupId>org.jboss.resteasy</groupId>
+	<artifactId>resteasy-client</artifactId>
+	<version>3.0.4.Final</version>
+	</dependency>
+	 <!--  for JSON provider -->
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-rs-extension-providers</artifactId>
+        <version>${cxf.version}</version>
+    </dependency>
+    <!--  for extension providers -->
+    <dependency>
+        <groupId>org.codehaus.jettison</groupId>
+        <artifactId>jettison</artifactId>
+        <version>1.2</version>
+    </dependency> 
   </dependencies>
   
     <build>

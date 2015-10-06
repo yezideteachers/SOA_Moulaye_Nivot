@@ -2,63 +2,69 @@ package polytech.unice.fr.groupe_f;
 
 public class Product {
 
-	// Fields
-	private static int id=0;
+	int id=0;
+	public static int IdAtuIncr=0;
 	
-	private int quantity;
-	private TYPE type;
-	private String name;
-	private COLOR color;
-	private double price;
-	private WOOD wood;
+	// Fields
+	int quantity;
+	String type;
+	String description;
+	String color;
+	double price;
+	String wood;
 	
 	// Constructor
 	public Product(int quantity, TYPE type, String name,
 			COLOR color, double price, WOOD wood) {
-		
-		id++;
+		this.id=IdAtuIncr;
 		this.quantity = quantity;
-		this.type = type;
-		this.name = name;
-		this.color = color;
+		this.type = type.toString();
+		this.description = name;
+		this.color = color.toString();
 		this.price = price;
-		this.wood = wood;
+		this.wood=wood.toString();
+		
 	}
 	
 	// Getters & Setters
-	public int getId(){
-		return id;
-	}
-	
 	public int getQuantity() {
 		return quantity;
 	}
+	public int getId(){return id;}
 	
 	public void setQuantity(int quatity) {
 		this.quantity = quatity;
 	}
 
-	public TYPE getType() {
+	public String getType() {
 		return type;
 	}
 	
-	public void setType(TYPE type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	
-	public String getName() {
-		return name;
+	public String getDescription() {
+		return description;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public String getWood() {
+		return wood;
+	}
+
+	public void setWood(String wood) {
+		this.wood = wood;
+	}
+
+	public void setDescription(String name) {
+		this.description = name;
 	}
 	
-	public COLOR getColor() {
+	public String getColor() {
 		return color;
 	}
 	
-	public void setColor(COLOR color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 	
@@ -70,19 +76,11 @@ public class Product {
 		this.price = price;
 	}
 	
-	public WOOD getWood() {
-		return wood;
-	}
-	
-	public void setWood(WOOD wood) {
-		this.wood = wood;
-	}
-	
 	// toString
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", quantity=" + quantity
-				+ ", type=" + type + ", name=" + name + ", color=" + color
-				+ ", price=" + price + "wood=" + wood + "]";
+		return "id : " + id + ", description : " + description + "quantity : " + quantity
+				+ ", type : " + type  + ", color :" + color
+				+ ", wood : " + wood + ", price : " + price ;
 	}
 }

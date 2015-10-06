@@ -12,6 +12,8 @@ import javax.ws.rs.core.Response;
 
 import org.json.JSONArray;
 
+import polytech.unice.fr.groupe_f.Client;
+
 @Path("/clients")
 //Here we generate JSON data from scratch, one should use a framework instead
 @Produces(MediaType.APPLICATION_JSON)
@@ -20,7 +22,7 @@ public interface ClientService {
 	
 	
 	@POST
-	@Path("/create/{name},{adress},{mail}")
+	@Path("/create/{name}/{adress}/{mail}")
 	public Response registerNewClient(@PathParam("name") String name,@PathParam("adress") String adress,
 			@PathParam("mail") String mail);
 	
@@ -29,21 +31,25 @@ public interface ClientService {
 	
 	
 	@DELETE
-	public Response deleteClient(String name);
+	@Path("/delete/{name}")
+	public Response deleteClient(@PathParam("name") String name);
 	
 	@PUT
-	@Path("/update/{name},{adress},{mail}")
+	@Path("/update/{name}/{adress}/{mail}")
 	public Response updateClient(@PathParam("name") String name,@PathParam("adress") String adress,
 					@PathParam("mail") String mail);
 	
 	@GET
 	@Path("/search/{name}")
-	public Response getClient(@PathParam("name") String name);
-	
-	@GET
-	@Path("/search/filter/{name},{value}")
-	public Response filterBy(@PathParam("name") String name, @PathParam("value") String v);
-	
+	public Response getClient(@PathParam("name")  String name);
 	
 
+	
+	@GET
+	@Path("/search/filter/{name}/{value}")
+	public Response filterBy(@PathParam("name") String name, @PathParam("value") String v);
+	
+	@POST
+	@Path("/order/{client}/{product}")
+	public Response order(@PathParam("client") String client, @PathParam("product") String product);
 }

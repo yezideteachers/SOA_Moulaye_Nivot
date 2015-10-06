@@ -1,5 +1,8 @@
 package polytech.unice.fr.groupe_f;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -19,10 +22,15 @@ public class MainClass {
 		ja.put(jo);
 		String [] st = {"kkl","hh"};
 
-		JSONObject mainObj = new JSONObject();
-		mainObj.put("employees", ja);
-		Cart.AddCommande("yez", "tel");
-		System.out.println(Cart.mapCart.get(Cart.id-1));
+		
+		
+		Collection<Product> products = RegisterProducts.getAvailableProducts();
+		ArrayList<String> list = new ArrayList<String>();
+		for(Product c: products) {
+		
+			list.add(c.toString());
+		}
+		System.out.println(list);
 
 	}
 

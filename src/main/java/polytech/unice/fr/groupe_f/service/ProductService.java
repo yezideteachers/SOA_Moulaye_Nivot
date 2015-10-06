@@ -12,7 +12,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import polytech.unice.fr.groupe_f.COLOR;
 import polytech.unice.fr.groupe_f.TYPE;
+import polytech.unice.fr.groupe_f.WOOD;
 
 
 
@@ -23,30 +25,31 @@ public interface ProductService {
 	
 	
 	@POST
-	@Path("/create/{size},{type},{name},{color},{price}")
+	@Path("/create/{description}/{quantity}/{TYPE}/{COLOR}/{price}/{WOOD}")
+	public Response createNewProduct(@PathParam("description") String description, @PathParam("quantity") int quantity , @PathParam("TYPE") TYPE type,
+			@PathParam("COLOR") COLOR color, 
+			@PathParam("price") double price,@PathParam("WOOD") WOOD wood);
 	
-	public Response createNewProduct(@PathParam("size")int size, @PathParam("type") TYPE type,
-			@PathParam("name") String name,@PathParam("color") String color, 
-			@PathParam("price") double price);
 	
 	@GET
 	public Response getAvailableProducts();
 	
 	
 	@DELETE
-	public Response deleteProduct(String name);
+	@Path("/delete/{id}")
+	public Response deleteProduct(int id);
 
 	@PUT
 	public Response updateProduct(int size , String color);
 	
-	
 	@GET
-	@Path("/search/{name}")
-	public Response getProduct(@PathParam("name") String name);
+	@Path("/search/{id}")
+	public Response getProduct(@PathParam("id") int id);
 	
+	/*filtrer le produit par nom , prix ... en spécifiant le niveau de filter */
 	@GET
-	@Path("/search/filter/{kind},{value}")
-	public Response filterBy(@PathParam("kind") String name, @PathParam("value") String v);
+	@Path("/search/filter/{type}/{value}")
+	public Response filterBy(@PathParam("type") String name, @PathParam("value") String v);
 		
 
 }

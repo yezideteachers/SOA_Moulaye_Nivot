@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.ws.rs.core.Response;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import polytech.unice.fr.groupe_f.Cart;
 import polytech.unice.fr.groupe_f.Client;
@@ -13,19 +14,35 @@ import polytech.unice.fr.groupe_f.RegisterClients;
 
 public class CartImpl implements CartService {
 
+	
 	public Response getAllCommande() {
 		// TODO Auto-generated method stub
-		Collection<ArrayList> cart = Cart.mapCart.values();
-		JSONArray result = new JSONArray();
-		for(ArrayList el: cart) {
-			result.put(el.toString());
+		Collection<Cart> listcarts = Cart.mapCart.values();
+		
+		ArrayList<Cart> list = new ArrayList<Cart>();
+		for(Cart el: listcarts) {
+			list.add(el);
 		}
+		JSONObject result = new JSONObject();
+		result.put("carts", list);
 		return Response.ok().entity(result.toString(2)).build();
 	}
 
-	public Response getCommande(int id) {
-		ArrayList commande = Cart.mapCart.get(id);
-		return Response.ok().entity(commande.toString()).build();
+	public Response getPanier(int idProd) {
+		
+		JSONObject result = new JSONObject();
+		result.put("Cart : ", Cart.mapCart.get(idProd));
+		return Response.ok().entity(result.toString()).build();
+	}
+
+	public Response addToCart(int id) {
+		Cart.create(id);
+		return Response.ok().build();
+	}
+
+	public Response deleteToCart(int id) {
+		
+		return Response.ok().build();
 	}
 
 }

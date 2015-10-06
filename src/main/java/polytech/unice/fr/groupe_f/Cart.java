@@ -7,33 +7,45 @@ import java.util.HashMap;
 public class Cart {
 
 	private String nameClient;
-	private String nameProduct;
+	private int idProduct;
+	private int idPanier;
 	public static Integer id=0;
 	
-	public static HashMap<Integer, ArrayList> mapCart = new HashMap<Integer, ArrayList>();
-	//public static HashMap<String, Product> mapClient = new HashMap<String, Product>();
+	public static HashMap<Integer, Cart> mapCart = new HashMap<Integer, Cart>();
 	
 	
-	public Cart(String nameClient, String nameProduct) {
-		this.nameClient = nameClient;
-		this.nameProduct = nameProduct;
+	public Cart(int idProduct) {
+		this.idProduct=idProduct;
+		this.idPanier=id;
 		
+		
+	}
+	public static void create(int idProduct){
+		mapCart.put(idProduct, new Cart(idProduct));
+		id+=1;
+	}
+	public int getIdProduct() {
+		return idProduct;
 	}
 
-	public static void AddCommande(String nameClient,String nameProduct){
-		
-		ArrayList<String> al = new ArrayList<String>();
-		al.add(nameClient);al.add(nameProduct);
-		mapCart.put(id,al);
-		id++;
+	public void setIdProduct(int idProduct) {
+		this.idProduct = idProduct;
 	}
-	
-	public static HashMap<Integer, ArrayList> sendCommandes(){
-		return mapCart;
+
+	public int getIdPanier() {
+		return idPanier;
+	}
+
+	@Override
+	public String toString() {
+		return ", idPanier : " + idPanier +
+				", idProduct : " + idProduct;
 	}
 	
 	static{
-		Cart.AddCommande("yezide", "tel");
-		Cart.AddCommande("yez", "port");
+		Cart.create(2);
+		Cart.create(1);
 	}
+
+	
 }

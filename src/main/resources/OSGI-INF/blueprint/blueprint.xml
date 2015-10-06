@@ -29,10 +29,14 @@ http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/ja
             <ref component-id="servpr"/>
             <ref component-id="sercart"/>
         </jaxrs:serviceBeans>
+       
     </jaxrs:server>
+   
 
    	<bean id="servcl" class="polytech.unice.fr.groupe_f.service.ClientImpl"/>
     <bean id="servpr" class="polytech.unice.fr.groupe_f.service.ProductImpl"/>
     <bean id="sercart" class="polytech.unice.fr.groupe_f.service.CartImpl"/>
+    
+    
 
 </blueprint>
