@@ -27,7 +27,9 @@ http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/ja
         <jaxrs:serviceBeans>
             <ref component-id="servcl"/>
             <ref component-id="servpr"/>
-            <ref component-id="sercart"/>
+            <ref component-id="servcart"/>
+            <ref component-id="servorder"/>
+            <ref component-id="servpayment"/>
         </jaxrs:serviceBeans>
        
     </jaxrs:server>
@@ -35,7 +37,9 @@ http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/ja
 
    	<bean id="servcl" class="polytech.unice.fr.groupe_f.service.ClientImpl"/>
     <bean id="servpr" class="polytech.unice.fr.groupe_f.service.ProductImpl"/>
-    <bean id="sercart" class="polytech.unice.fr.groupe_f.service.CartImpl"/>
+    <bean id="servcart" class="polytech.unice.fr.groupe_f.service.CartImpl"/>
+     <bean id="servorder" class="polytech.unice.fr.groupe_f.service.OrderImpl"/>
+     <bean id="servpayment" class="polytech.unice.fr.groupe_f.service.PaymentImpl"/>
     
     
 

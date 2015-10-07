@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class RegisterClients{
 
 	
-private static HashMap<String, Client> stor = new HashMap<String, Client>();
+public static HashMap<String, Client> stor = new HashMap<String, Client>();
 
 public static void create(String name,String adress,String mail) {
 	stor.put(name, new Client(name, adress, mail, 0));
@@ -35,9 +35,9 @@ public static Collection<Client> getAvailableClients() {
 }
 
 static{
-	RegisterClients.create("user1", "01","mail1");
-	RegisterClients.create("user2", "02","mail2");
-	RegisterClients.create("user3", "03","mail3");
+	RegisterClients.create("yezide", "nice","al@gmail.com");
+	RegisterClients.create("stephane", "cannes","al@yahoo.fr");
+	RegisterClients.create("tintin", "mars","av@haotmail.com");
 }	
 	
 }

@@ -16,7 +16,7 @@ public class CartImpl implements CartService {
 
 	
 	public Response getAllCommande() {
-		// TODO Auto-generated method stub
+	
 		Collection<Cart> listcarts = Cart.mapCart.values();
 		
 		ArrayList<Cart> list = new ArrayList<Cart>();
@@ -28,11 +28,18 @@ public class CartImpl implements CartService {
 		return Response.ok().entity(result.toString(2)).build();
 	}
 
-	public Response getPanier(int idProd) {
+	public Response getCart(int idC) {
 		
 		JSONObject result = new JSONObject();
-		result.put("Cart : ", Cart.mapCart.get(idProd));
-		return Response.ok().entity(result.toString()).build();
+		for (Cart el : Cart.mapCart.values()) {
+			if(el.getIdCart()==idC){
+				result.put("Cart ", el);
+				break;
+			}
+			
+		}
+		
+		return Response.ok().entity(result.toString(2)).build();
 	}
 
 	public Response addToCart(int id) {

@@ -18,14 +18,14 @@ public interface CartService {
 	public Response getAllCommande();
 	
 	@GET
-	@Path("/get/{idProd}")
-	public Response getPanier(@PathParam("id") int id);
+	@Path("/search/{idCart}")
+	public Response getCart(@PathParam("idCart") int id);
 	
 	@POST
 	@Path("/addToCart/{idProd}")
 	public Response addToCart(@PathParam("idProd") int id);
 	
 	@DELETE
-	@Path("/delete/{idProd}")
+	@Path("/delete/{idCart}")
 	public Response deleteToCart(@PathParam("idProd") int id);
 }

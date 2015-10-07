@@ -8,7 +8,7 @@ public class Cart {
 
 	private String nameClient;
 	private int idProduct;
-	private int idPanier;
+	private int idCart;
 	public static Integer id=0;
 	
 	public static HashMap<Integer, Cart> mapCart = new HashMap<Integer, Cart>();
@@ -16,7 +16,7 @@ public class Cart {
 	
 	public Cart(int idProduct) {
 		this.idProduct=idProduct;
-		this.idPanier=id;
+		this.idCart=id;
 		
 		
 	}
@@ -32,13 +32,13 @@ public class Cart {
 		this.idProduct = idProduct;
 	}
 
-	public int getIdPanier() {
-		return idPanier;
+	public int getIdCart() {
+		return idCart;
 	}
 
 	@Override
 	public String toString() {
-		return ", idPanier : " + idPanier +
+		return ", idCart : " + idCart +
 				", idProduct : " + idProduct;
 	}
 	

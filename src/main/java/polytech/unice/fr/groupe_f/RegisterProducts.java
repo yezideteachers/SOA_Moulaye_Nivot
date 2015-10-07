@@ -42,11 +42,9 @@ public class RegisterProducts {
 		RegisterProducts.create("chaise", 10,TYPE.CHAIR, COLOR.BLACK, 24.99, WOOD.ACACIA);
 		RegisterProducts.create("porte", 20,TYPE.DOOR, COLOR.BLACK, 244.99, WOOD.ACACIA);
 		RegisterProducts.create("bureau", 30,TYPE.DESKTOP, COLOR.BLACK, 444.99, WOOD.ACACIA);
-	/*	RegisterProducts.create("porte", TYPE.DESKTOP, "red", 84.99, 25);
-		RegisterProducts.create("placard", TYPE.CUPBOARD, "black", 254.0, 82);
-		RegisterProducts.create("chaise2", TYPE.CHAIR, "green", 54.99, 22);
-		RegisterProducts.create("bureau", TYPE.DESKTOP, "white", 854.99, 65);
-		RegisterProducts.create("lit", TYPE.BED, "yellow", 244.99, 72);*/
+		RegisterProducts.create("porte", 23, TYPE.DESKTOP, COLOR.BLUE, 84.99, WOOD.EBONY);
+		RegisterProducts.create("placard",12, TYPE.CUPBOARD, COLOR.RED, 254.0, WOOD.OAK);
+		
 	}
 
 }
