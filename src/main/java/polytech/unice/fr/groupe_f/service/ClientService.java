@@ -49,7 +49,5 @@ public interface ClientService {
 	@Path("/search/filter/{name}/{value}")
 	public Response filterBy(@PathParam("name") String name, @PathParam("value") String v);
 	
-	@POST
-	@Path("/order/{client}/{product}")
-	public Response order(@PathParam("client") String client, @PathParam("product") String product);
+	
 }

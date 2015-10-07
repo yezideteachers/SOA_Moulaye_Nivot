@@ -26,9 +26,13 @@ public class RegisterProducts {
 	}
 
 
-	public static void update(int id, TYPE type, COLOR color) {
+	public static void update(int id, String name,int quantity , TYPE type, COLOR color , WOOD wood, double price) {
 		col.get(id).setType(type.toString());
 		col.get(id).setColor(color.toString());
+		col.get(id).setDescription(name);
+		col.get(id).setWood(wood.toString());
+		col.get(id).setQuantity(quantity);
+		col.get(id).setPrice(price);
 		
 		
 	}

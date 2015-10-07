@@ -51,10 +51,7 @@ public class ProductImpl implements ProductService {
 		return Response.ok().build();
 	}
 
-	public Response updateProduct(int size, String color) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	public Response getProduct(int id) {
 		if(RegisterProducts.read(id) == null) {
@@ -104,6 +101,16 @@ public class ProductImpl implements ProductService {
 		}
 		result.put(new String("filter products by"+name), list);
 		return Response.ok().entity(result.toString(2)).build();
+	}
+
+	public Response updateProduct(String descr, int quant, TYPE type,
+			COLOR color, double price, WOOD wood) {
+		for (Product el : RegisterProducts.col.values()) {
+			if(el.getDescription().equals(descr)){
+				RegisterProducts.update(el.getId(), descr, quant, type, color, wood, price);
+			}
+		}
+		return Response.ok().build();
 	}
 
 	

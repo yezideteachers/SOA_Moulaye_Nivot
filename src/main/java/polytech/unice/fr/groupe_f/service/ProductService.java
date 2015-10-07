@@ -40,7 +40,9 @@ public interface ProductService {
 	public Response deleteProduct(int id);
 
 	@PUT
-	public Response updateProduct(int size , String color);
+	@Path("/update/{description}/{quantity}/{type}/{color}/{price}/{wood}")
+	public Response updateProduct(@PathParam("description") String descr, @PathParam("quantity") int quant , @PathParam("type") TYPE type ,
+					@PathParam("color") COLOR color , @PathParam("price") double price , @PathParam("wood") WOOD wood);
 	
 	@GET
 	@Path("/search/{id}")

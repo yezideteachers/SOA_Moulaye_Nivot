@@ -23,7 +23,7 @@
 http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
 http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd">
 
-    <jaxrs:server id="service" address="/mydemo">
+    <jaxrs:server id="service" address="/restf">
         <jaxrs:serviceBeans>
             <ref component-id="servcl"/>
             <ref component-id="servpr"/>

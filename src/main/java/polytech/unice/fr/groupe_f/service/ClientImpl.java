@@ -102,17 +102,7 @@ public class ClientImpl implements ClientService{
 			return Response.ok().entity(result.toString(2)).build();
 		}
 
-	public Response order(String client, String product) {
-		/*try {
-			RegisterClients.read(client);
-			RegisterProducts.read(product);
-		} catch (Exception e) {
-			return Response.status(Response.Status.NOT_FOUND).build();
-		}*/
-		
-		JSONObject js=new JSONObject();
-		return Response.ok().entity(js).build();
-	}
+
 
 	
 }
